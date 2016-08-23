@@ -1,0 +1,10 @@
+<template name = 'displayContacts'>
+
+  <h3>Contacts</h3>
+
+  {{> reactiveTable collection = tableValues settings = settings class = 'table table-hover table-condensed'}}
+
+  <a href = '/' class = 'btn btn-success'>Home</a>
+  <a href = '/addContact' class = 'btn btn-primary'>Add a new contact</a>
+
+</template>

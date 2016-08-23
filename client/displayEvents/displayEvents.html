@@ -1,0 +1,10 @@
+<template name = 'displayEvents'>
+
+  <h3>Events</h3>
+
+  {{> reactiveTable collection = tableValues settings = settings class = 'table table-hover table-condensed'}}
+
+  <a href = '/' class = 'btn btn-success'>Home</a>
+  <a href = '/addEvent' class = 'btn btn-primary'>Add a new event</a>
+
+</template>

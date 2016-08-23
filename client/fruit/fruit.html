@@ -1,0 +1,19 @@
+<template name = 'fruit'>
+  <div class = 'row'>
+    <div class = 'col-md-2'>
+    </div>
+    <div class = 'col-md-8'>
+      <h3>{{fruitTitle}}</h3>
+
+      <br />
+
+      {{> reactiveTable collection = tableValues1 settings = settings1 class = 'table table-hover table-condensed'}}
+
+      <a href = '/' class = "btn btn-success">Home</a>
+      <a href = '/displayFruit' class = "btn btn-primary">Fruit</a>
+    </div>
+    <div class = 'col-md-2'>
+    </div>
+  </div>
+
+</template>

@@ -1,0 +1,47 @@
+<template name = 'event4'>
+  <div class = 'row'>
+    <div class = 'col-md-2'>
+    </div>
+    <div class = 'col-md-8'>
+      <h3>Indirect Referral Values for {{name}}</h3>
+      <br />
+      <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="/">Home</a></li>
+      <li role="presentation"><a href="/event/{{_id}}">Profile</a></li>
+      <li role="presentation"><a href="/event2/{{_id}}">Sources & Referrals</a></li>
+      <li role="presentation"><a href="/event5/{{_id}}">Direct Referral Values</a></li>
+      <li role="presentation"><a href="/event/edit/{{_id}}">Edit profile</a></li>
+      </ul>
+      <br /><br />
+
+      Indirect Referral Values are calculated based on the Fruit Values of a Contact's or Event's Referrals, the Referrals' Referrals, and so on.
+      For example, if contact A has two Referrals, contact B and contact C, and contact B has two Referrals, contact D and contact E, the Indirect Referral
+      Value for contact A is the sum of the Fruit Values for contacts B, C, D and E.  It does not include contact A's Fruit Value.
+
+      <br /><br />
+
+      <table class = 'table table-hover table-condensed'>
+        <thead>
+          <tr>
+            <th>Fruit Field</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each results}}
+          <tr>
+            <td>{{formatFruit fruit}}</td>
+            <td>{{value}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <div class = 'col-md-2'>
+
+    </div>
+
+
+  </div>
+
+</template>

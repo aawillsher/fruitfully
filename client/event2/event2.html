@@ -1,0 +1,66 @@
+<template name = 'event2'>
+  <h3>{{eventTitle}}
+  <br /> {{formatDateShort eventDate}}</h3>
+  <br />
+  <ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="/">Home</a></li>
+  <li role="presentation"><a href="/event/{{_id}}">Profile</a></li>
+  <li role="presentation"><a href="/event4/{{_id}}">Indirect Referral values</a></li>
+  <li role="presentation"><a href="/event5/{{_id}}">Direct Referral Values</a></li>
+  <li role="presentation"><a href="/event/edit/{{_id}}">Edit event</a></li>
+</ul>
+<br />
+  <div class = 'row'>
+
+    <div class = 'col-lg-5'>
+      <h4>Source</h4>
+
+      {{#if a}}
+      There is no Source for this Event.
+
+      {{else}}
+
+      {{#if b}}
+      The Source for this Event is <a href = /contact/{{sourceId}}>{{source}}</a>
+
+      {{else}}
+      The Source for this Event is the <a href = /event/{{sourceId}}>{{source}}</a>
+
+      {{/if}}
+
+      {{/if}}
+
+      <br /><br />
+
+      <a href = '/event/editSource/{{_id}}' class = 'btn btn-info btn-sm'>Update</a>
+      {{#if c}}
+      <a href = '#' class = 'btn btn-danger btn-sm remove'>Remove</a>
+      {{/if}}
+
+      <br /><br />
+    </div>
+
+    <div class = 'col-lg-7'>
+        <h4>Referrals</h4>
+
+        {{#if d}}
+          There are no Referrals for this Event.
+        {{/if}}
+
+        {{#if g}}
+
+        <h5>Contacts</h5>
+
+        {{> reactiveTable collection = tableValues1 settings = settings1 class = 'table table-hover table-condensed'}}
+
+        <h5>Events</h5>
+
+        {{> reactiveTable collection = tableValues2 settings = settings2 class = 'table table-hover table-condensed'}}
+
+        {{/if}}
+
+
+    </div>
+  </div>
+
+</template>

@@ -1,0 +1,31 @@
+<template name = 'editContactSource'>
+  <h3>Select a Contact or Event as the Source for this Contact</h3>
+  <form class = 'chooseContact'>
+    <div class = 'form-group'>
+      <h4>Contacts</h4>
+      <select class = 'form-control' id = 'chooseContact'>
+        {{#each contacts}}
+        <option value = '{{_id}}'>
+          {{firstName}} {{lastName}}
+        </option>
+        {{/each}}
+      </select>
+      <button type = 'submit' class = 'btn btn-success'>Submit</button>
+    </div>
+  </form>
+  <form class = 'chooseEvent'>
+    <div class = 'form-group'>
+      <h4>Events</h4>
+      <select class = 'form-control' id = 'chooseEvent'>
+        {{#each events}}
+        <option value = '{{_id}}'>
+          {{eventTitle}}
+        </option>
+        {{/each}}
+      </select>
+      <button type = 'submit' class = 'btn btn-success'>Submit</button>
+    </div>
+  </form>
+  <br /><br />
+  <a href = '#' class = 'btn btn-warning cancel'>Cancel</a>
+</template>

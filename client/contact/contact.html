@@ -1,0 +1,102 @@
+<template name = 'contact'>
+
+  <h3>{{firstName}} {{lastName}}</h3>
+  <br />
+
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="/">Home</a></li>
+    <li role="presentation"><a href="/contact2/{{_id}}">Sources & Referrals</a></li>
+    <li role="presentation"><a href="/contact3/{{_id}}">Fruit Values</a></li>
+    <li role="presentation"><a href="/contact4/{{_id}}">Indirect Referral Values</a></li>
+    <li role="presentation"><a href="/contact5/{{_id}}">Direct Referral Values</a></li>
+    <li role="presentation"><a href="/contact/edit/{{_id}}">Edit profile</a></li>
+  </ul>
+  <br />
+
+  <div class = 'row'>
+    <div class = 'col-lg-6'>
+      <h4>Profile</h4>
+
+      <table class = 'table table-hover table-condensed'>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Organization</th>
+            <th>Industry</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{position}}</td>
+            <td>{{organization}}</td>
+            <td>{{industry}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      <table class = 'table table-hover table-condensed'>
+        <thead>
+          <tr>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{description}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class = 'table table-hover table-condensed'>
+        <thead>
+          <tr>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{streetAddress}}, {{municipality}}, {{province}}, {{postalCode}}</td>
+            <td>{{emailAddress}}</td>
+            <td>{{website}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class = 'table table-hover table-condensed'>
+        <thead>
+          <tr>
+            <th>Telephone</th>
+            <th>Cell</th>
+            <th>Fax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{telephone}}</td>
+            <td>{{cell}}</td>
+            <td>{{fax}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href = '#' class = 'btn btn-danger deleteContact'>Delete contact</a>
+
+    </div>
+
+    <div class = 'col-lg-6'>
+      <h4>Notes</h4>
+
+      {{> reactiveTable collection = tableValues1 settings = settings1 class = 'table table-hover table-condensed'}}
+
+      <td><a href = '/contact/addNote/{{_id}}' class = 'btn btn-success'>Create new note</a></td>
+      <br /><br />
+
+    </div>
+
+  </div>
+
+</template>

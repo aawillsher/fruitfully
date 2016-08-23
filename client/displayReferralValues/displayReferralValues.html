@@ -1,0 +1,26 @@
+<template name = 'displayReferralValues'>
+  <div class = 'row'>
+    <div class = 'col-md-2'>
+    </div>
+    <div class = 'col-md-8'>
+      <h3>Indirect Referral Values for {{title}} </h3>
+      <br />
+      Indirect Referral Values are calculated based on the Fruit Values of a Contact's or Event's Referrals, the Referrals' Referrals, and so on.
+      For example, if contact A has two Referrals, contact B and contact C, and contact B has two Referrals, contact D and contact E, the Indirect Referral
+      Value for contact A is the sum of the Fruit Values for contacts B, C, D and E.  It does not include contact A's Fruit Value.
+      <br /><br />
+
+      {{> reactiveTable collection = tableValues settings = settings class = 'table table-hover table-condensed'}}
+
+      <br />
+
+      <a href = '/' class = "btn btn-success">Home</a>
+      <a href = '/displayFruit' class = "btn btn-primary">Fruit</a>
+    </div>
+    <div class = 'col-md-2'>
+
+    </div>
+
+  </div>
+
+</template>

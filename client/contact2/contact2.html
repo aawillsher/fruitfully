@@ -1,0 +1,65 @@
+<template name = 'contact2'>
+  <h3>{{firstName}} {{lastName}}</h3>
+  <br />
+  <ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="/">Home</a></li>
+  <li role="presentation"><a href="/contact/{{_id}}">Profile</a></li>
+  <li role="presentation"><a href="/contact3/{{_id}}">Fruit Values</a></li>
+  <li role="presentation"><a href="/contact4/{{_id}}">Indirect Referral Values</a></li>
+  <li role="presentation"><a href="/contact5/{{_id}}">Direct Referral Values</a></li>
+  <li role="presentation"><a href="/contact/edit/{{_id}}">Edit profile</a></li>
+  </ul>
+  <br />
+    <div class = 'row'>
+
+      <div class = 'col-lg-5'>
+        <h4>Source</h4>
+
+        {{#if a}}
+        There is no Source for this Contact.
+
+        {{else}}
+
+        {{#if b}}
+        The Source for this Contact is <a href = /contact/{{sourceId}}>{{source}}</a>
+
+        {{else}}
+        The Source for this Contact is the <a href = /event/{{sourceId}}>{{source}}</a>
+
+        {{/if}}
+
+        {{/if}}
+
+        <br /><br />
+
+        <a href = '/contact/editSource/{{_id}}' class = 'btn btn-info'>Update</a>
+        {{#if c}}
+        <a href = '#' class = 'btn btn-danger remove'>Remove</a>
+        {{/if}}
+
+        <br /><br />
+      </div>
+
+      <div class = 'col-lg-7'>
+          <h4>Referrals</h4>
+
+          {{#if d}}
+            There are no Referrals for this Contact.
+          {{/if}}
+
+          {{#if g}}
+
+          <h5>Contacts</h5>
+
+          {{> reactiveTable collection = tableValues1 settings = settings1 class = 'table table-hover table-condensed'}}
+
+          <h5>Events</h5>
+
+          {{> reactiveTable collection = tableValues2 settings = settings2 class = 'table table-hover table-condensed'}}
+
+          {{/if}}
+
+    </div>
+  </div>
+
+</template>

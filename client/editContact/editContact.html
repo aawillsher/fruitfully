@@ -1,0 +1,15 @@
+<template name = 'editContact'>
+
+  <h4>Edit contact</h4>
+
+  {{#autoForm collection = "Contacts" doc = this type = "update" id = "editContact"}}
+    {{> afQuickFields}}
+    <div>
+      <button type = "submit" class = "btn btn-success">Submit</button>
+      <a href = '#' class = "btn btn-warning cancel">Cancel</a>
+      <button type = "reset" class = "btn btn-primary">Reset</button>
+    </div>
+    {{/autoForm}}
+  <br />
+
+</template>

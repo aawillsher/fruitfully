@@ -1,0 +1,11 @@
+<template name = 'addContactNote'>
+  <h3>Add a new note for {{formatName _id}}</h3>
+  <br />
+  <form class = 'addContactNoteForm'>
+    <div class = 'form-group'>
+      <textarea name = 'noteContent' rows = 3 class = 'form-control' id = 'noteContent'></textarea>
+    </div>
+    <button type = 'submit' class = 'btn btn-success'>Submit</button>
+    <a href = '#' class = "btn btn-warning cancel">Cancel</a>
+  </form>
+</template>

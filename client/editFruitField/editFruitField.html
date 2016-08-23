@@ -1,0 +1,12 @@
+<template name = 'editFruitField'>
+  <h4>Current title for Fruit Field:</h4>
+  <h4>{{fruitFieldTitle}}</h4>
+  <form class = 'editFruitField'>
+    <div class = 'form-group'>
+      <input type = 'text' class = 'form-control' id = 'newFruitFieldTitle' placeholder = "Enter a new name"/>
+    </div>
+    <button type = 'submit' class = 'btn btn-success'>Submit</button>
+    <a href = '#' class = 'btn btn-danger deleteFruitField'>Delete Fruit Field</a>
+    <a href = '/displayFruit' class = 'btn btn-warning'>Cancel</a>
+  </form>
+</template>

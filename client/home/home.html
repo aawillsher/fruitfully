@@ -1,0 +1,62 @@
+<template name = 'home'>
+
+
+    <div class = 'container'>
+      <div class = 'row'>
+
+        <div class = 'col-md-2'>
+          <h1>Fruitfully</h1>
+          <br /><br />
+          {{> loginButtons}}
+          <br />
+          {{#if loggedIn}}
+          <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Add <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="/addContact">Contact</a></li>
+              <li><a href="/addEvent">Event</a></li>
+            </ul>
+          </div><br /><br />
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Display <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="/displayContacts">Contacts</a></li>
+              <li><a href="/displayEvents">Events</a></li>
+              <li><a href="/displayFruit">Fruit</a></li>
+            </ul>
+          </div>
+          <br /><br />
+          <a href = '/about' class = 'btn btn-warning'>About Fruitfully</a>
+          <br /><br />
+          Calendar items: Events appear in <span id = 'blue'>blue</span>, event notes in <span id = 'green'>green</span>,
+          and contact notes in <span id = 'red'>red</span>.
+          <br /><br />
+          <span class = 'bold'>Note</span>: Calendar items are displaying inconsistently.
+           To see items, move to another page and return, or move to another month and return to the current month.
+
+           {{else}}
+           <a href = '/about' class = 'btn btn-warning'>About Fruitfully</a>
+
+            {{/if}}
+
+        </div>
+
+        {{#if loggedIn}}
+        <div class = 'col-md-10'>
+          <br />
+          <div id = 'event-calendar'>
+
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+
+
+</template>
